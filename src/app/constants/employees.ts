@@ -2,8 +2,8 @@ export const EMPLOYEES = [
     {
         id: '1',
         name: 'Dale',
-        salary: 1000,
-        wallet: '0xEb96Bb46e1A422E5F64e2A1651e2e53a98915173'
+        salary: 12000,
+        wallet: '0x356C589A774034D836BdbC7F427F16C9d4FFC1A0'
     },
     {
         id: '2',
@@ -14,7 +14,13 @@ export const EMPLOYEES = [
     {
         id: '3',
         name: 'Samuel',
-        salary: 2000,
+        salary: 12000,
         wallet: '0x6D7815F73e3c8B57A3EfA744cDa5958114ef6624'
+    },
+    {
+        id: '4',
+        name: 'Costa',
+        salary: 3000,
+        wallet: '0x4736a3ca997662DFe1583E2E50079586BB5a0891',
     },
 ]

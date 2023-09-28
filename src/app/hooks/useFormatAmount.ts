@@ -1,3 +1,3 @@
 export const useFormatAmount = () => {
-    return (amount: number) => `€ ${amount}`
+    return (amount: number) => `€ ${new Intl.NumberFormat().format(amount)}`
 }

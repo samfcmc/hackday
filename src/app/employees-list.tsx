@@ -39,7 +39,7 @@ const Employees = () => {
     return (
         <article>
             <div className='flex flex-row justify-between'>
-                <div>Employees</div>
+                <div className='flex flex-row items-center'>Employees</div>
                 <Button variant='outlined' color='success' disabled={!isConnected} onClick={onPay}>Pay</Button>
             </div>
             <div className='w-full mt-2'>
@@ -48,9 +48,9 @@ const Employees = () => {
                         <TableHead>
                         <TableRow>
                             <TableCell>ID</TableCell>
-                            <TableCell align="right">Name</TableCell>
-                            <TableCell align="right">Salary</TableCell>
-                            <TableCell align="right">Wallet</TableCell>
+                            <TableCell >Name</TableCell>
+                            <TableCell >Salary</TableCell>
+                            <TableCell >Wallet</TableCell>
                         </TableRow>
                         </TableHead>
                         <TableBody>
@@ -62,9 +62,9 @@ const Employees = () => {
                                 <TableCell component="th" scope="row">
                                     {id}
                                 </TableCell>
-                                <TableCell align="right">{name}</TableCell>
-                                <TableCell align="right">{formatAmount(salary)}</TableCell>
-                                <TableCell align="right"><a href={`https://sepolia.etherscan.io/address/${wallet}`} className='underline'>{wallet}</a></TableCell>
+                                <TableCell >{name}</TableCell>
+                                <TableCell >{formatAmount(salary)}</TableCell>
+                                <TableCell ><a href={`https://sepolia.etherscan.io/address/${wallet}`} className='underline'>{wallet}</a></TableCell>
                             </TableRow>
                         ))}
                         </TableBody>
