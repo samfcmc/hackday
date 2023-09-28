@@ -9,7 +9,7 @@ export default function Home() {
       <main className="flex min-h-screen flex-col items-center p-24">
         <header className="flex flex-row items-center justify-between w-full">
           <div className="flex-1">
-            Silent Exchange
+            Cloud Payroll
           </div>
           <div>
               <Metamask />

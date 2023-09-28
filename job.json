@@ -1,0 +1,74 @@
+{
+    "id": "c73dab80-9187-4ce3-9a8f-a8f9c957deff",
+    "name": "Payroll Test 2.2",
+    "trigger": {
+        "type": "SMART_CONTRACT",
+        "allowed_callers": [
+            "0x7c16C172cECe3BEf90bEb5693770542AF36c82e1"
+        ],
+        "chain": "POLYGON",
+        "network": "TESTNET"
+    },
+    "steps": [
+        {
+            "type": "REQUEST",
+            "format": "JSON",
+            "method": "POST",
+            "endpoint": "https://42ad-88-157-139-62.ngrok-free.app/main",
+            "body": {
+                "salaries": [
+                    {
+                        "id": "1",
+                        "name": "Dale",
+                        "amount": 12000,
+                        "wallet": "0x356C589A774034D836BdbC7F427F16C9d4FFC1A0"
+                    },
+                    {
+                        "id": "2",
+                        "name": "Francesco",
+                        "amount": 2000,
+                        "wallet": "0x7899aF486E73b5b0019e57F145084E76D90eA572"
+                    },
+                    {
+                        "id": "3",
+                        "name": "Samuel",
+                        "amount": 12000,
+                        "wallet": "0x6D7815F73e3c8B57A3EfA744cDa5958114ef6624"
+                    },
+                    {
+                        "id": "4",
+                        "name": "Costa",
+                        "amount": 3000,
+                        "wallet": "0x4736a3ca997662DFe1583E2E50079586BB5a0891"
+                    }
+                ],
+                "addr": "sdasa",
+                "sepolia_num": 12312
+            }
+        },
+        {
+            "type": "ATTESTATION",
+            "rules": [
+                {
+                    "source": "${STEPS[1].data.result.is_success}",
+                    "operator": "==",
+                    "target": true
+                }
+            ]
+        }
+    ],
+    "result": {
+        "chain": "POLYGON",
+        "network": "TESTNET",
+        "success_response": {
+            "contract_address": "0xd7a95d5bAdAB7496eDbf15a990d2605b6909D91F",
+            "contract_method": "afterPayroll",
+            "arguments": [
+                {
+                    "type": "BOOL",
+                    "value": "true"
+                }
+            ]
+        }
+    }
+}

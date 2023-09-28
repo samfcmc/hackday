@@ -87,6 +87,7 @@ const Employees = () => {
                     </Table>
                 </TableContainer>
             </div>
+            <div className='mt-2'>Total: {formatAmount(EMPLOYEES.reduce((acc, { salary }) => acc + salary, 0))}</div>
             <PayingDialog open={paying} />
             <ErrorDialog open={!!error} errorMessage={error} onClose={() => {
                 setError(null)
