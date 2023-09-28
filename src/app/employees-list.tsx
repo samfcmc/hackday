@@ -14,6 +14,7 @@ import { useAccount } from 'wagmi'
 import PayingDialog from '@/app/dialog/paying';
 import ErrorDialog from '@/app/dialog/error';
 import { useState } from 'react'
+import { useFormatAmount } from '@/app/hooks/useFormatAmount'
 
 const Employees = () => { 
     const [paying, setPaying] = useState(false)
@@ -21,6 +22,7 @@ const Employees = () => {
 
     const doFetch = useFetch()
     const { isConnected } = useAccount()
+    const formatAmount = useFormatAmount()
 
     const onPay = async () => {
         setPaying(true)
@@ -61,7 +63,7 @@ const Employees = () => {
                                     {id}
                                 </TableCell>
                                 <TableCell align="right">{name}</TableCell>
-                                <TableCell align="right">{salary}</TableCell>
+                                <TableCell align="right">{formatAmount(salary)}</TableCell>
                                 <TableCell align="right"><a href={`https://sepolia.etherscan.io/address/${wallet}`} className='underline'>{wallet}</a></TableCell>
                             </TableRow>
                         ))}
