@@ -23,7 +23,10 @@ export default function Metamask() {
 
   if (isConnected && address) {
     return (
-      <Button variant='outlined' onClick={onDisconnect}>Disconnect</Button>
+        <div className='flex flex-row gap-2 items-center'>
+            <span>{address}</span>
+            <Button variant='outlined' onClick={onDisconnect}>Disconnect</Button>
+        </div>
     )
   }
   return (
